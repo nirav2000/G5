@@ -1,0 +1,266 @@
+[
+  {
+    "id": "notes",
+    "title": "Meet the stave",
+    "level": "Start here",
+    "goal": "Read the five lines and four spaces",
+    "teach": "Music is written on five lines called a stave. A clef tells you which pitches those lines represent. In treble clef, the lines from bottom to top are E G B D F. The spaces are F A C E.",
+    "steps": [
+      "Count the five lines from the bottom upwards.",
+      "Use E G B D F for line notes.",
+      "The four spaces spell F A C E."
+    ],
+    "example": "A note on the bottom line of the treble stave is E.",
+    "question": "Which notes spell the treble-clef spaces from bottom to top?",
+    "choices": [
+      "F A C E",
+      "E G B D",
+      "A C E G"
+    ],
+    "answer": 0,
+    "hint": "The spaces spell an English word.",
+    "why": "The spaces are F, A, C and E."
+  },
+  {
+    "id": "values",
+    "title": "How long is a note?",
+    "level": "Foundation",
+    "goal": "Understand note values and dots",
+    "teach": "A semibreve is worth four crotchet beats, a minim two, a crotchet one and a quaver half. A dot adds half the note's original value.",
+    "steps": [
+      "Start with a crotchet: 1 beat.",
+      "A minim is 2 beats; a quaver is half a beat.",
+      "A dotted crotchet is 1 + ½ = 1½ beats."
+    ],
+    "example": "A dotted minim lasts 2 + 1 = 3 crotchet beats.",
+    "question": "How many quavers fit in one dotted crotchet?",
+    "choices": [
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 1,
+    "hint": "One crotchet is two quavers. The dot adds one more.",
+    "why": "Two quavers plus one quaver make three."
+  },
+  {
+    "id": "time",
+    "title": "Find the pulse",
+    "level": "Foundation",
+    "goal": "Tell simple from compound time",
+    "teach": "The top number of a time signature helps show how notes are grouped. In 3/4 there are three crotchet beats. In 6/8 there are usually two dotted-crotchet beats, each split into three quavers.",
+    "steps": [
+      "Clap three steady crotchet beats for 3/4.",
+      "Clap TWO larger beats for 6/8.",
+      "Say ONE-two-three TWO-two-three."
+    ],
+    "example": "6/8 is compound duple: two beats, each divided into three.",
+    "question": "Which is compound duple time?",
+    "choices": [
+      "2/4",
+      "3/4",
+      "6/8"
+    ],
+    "answer": 2,
+    "hint": "Look for six quavers grouped in two sets of three.",
+    "why": "6/8 usually has two dotted-crotchet beats."
+  },
+  {
+    "id": "scales",
+    "title": "Build a major scale",
+    "level": "Foundation",
+    "goal": "Use tones and semitones",
+    "teach": "A semitone is the smallest step on a piano keyboard. Two semitones make a tone. Major scales follow T T S T T T S.",
+    "steps": [
+      "Begin on C.",
+      "Follow C D E F G A B C.",
+      "Notice the semitones E–F and B–C."
+    ],
+    "example": "G major needs F♯ to preserve the major-scale pattern.",
+    "question": "What is the major-scale step pattern?",
+    "choices": [
+      "T S T T S T T",
+      "T T S T T T S",
+      "T T T S T S T"
+    ],
+    "answer": 1,
+    "hint": "There is a semitone between degrees 3–4 and 7–8.",
+    "why": "Major scales use tone, tone, semitone, tone, tone, tone, semitone."
+  },
+  {
+    "id": "keys",
+    "title": "Unlock key signatures",
+    "level": "Grade 5 pathway",
+    "goal": "Use the order of sharps",
+    "teach": "Key signatures show which notes are usually sharp or flat. Sharps are added in this order: F C G D A E B. Each new sharp key moves a perfect fifth higher.",
+    "steps": [
+      "G major has F♯.",
+      "D major has F♯ and C♯.",
+      "A major adds G♯; E major adds D♯; B major adds A♯."
+    ],
+    "example": "B major has five sharps: F♯ C♯ G♯ D♯ A♯.",
+    "question": "How many sharps are in B major?",
+    "choices": [
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 1,
+    "hint": "Count G, D, A, E, B major along the circle of fifths.",
+    "why": "B major has five sharps."
+  },
+  {
+    "id": "minor",
+    "title": "Major and minor relatives",
+    "level": "Grade 5 pathway",
+    "goal": "Find relative minor keys",
+    "teach": "Every major key has a relative minor sharing its key signature. The relative minor begins on the sixth note of the major scale, or three semitones below the major tonic.",
+    "steps": [
+      "Write E♭ F G A♭ B♭ C D.",
+      "The sixth note is C.",
+      "Therefore E♭ major and C minor have the same three flats."
+    ],
+    "example": "C major and A minor share no sharps or flats.",
+    "question": "What is the relative minor of E♭ major?",
+    "choices": [
+      "C minor",
+      "G minor",
+      "F minor"
+    ],
+    "answer": 0,
+    "hint": "Count to the sixth note of E♭ major.",
+    "why": "C minor shares E♭ major's three-flat signature."
+  },
+  {
+    "id": "intervals",
+    "title": "Measure the distance",
+    "level": "Grade 5 pathway",
+    "goal": "Name interval numbers and qualities",
+    "teach": "An interval is the distance between two notes. Count letter names inclusively to get its number. Then check the semitones to determine major, minor, perfect, augmented or diminished.",
+    "steps": [
+      "C to E spans C-D-E: a third.",
+      "C to E is four semitones: a major third.",
+      "Lower E to E♭: three semitones, a minor third."
+    ],
+    "example": "C to G is a perfect fifth.",
+    "question": "What interval is C up to E♭?",
+    "choices": [
+      "Major third",
+      "Minor third",
+      "Perfect fourth"
+    ],
+    "answer": 1,
+    "hint": "It spans three letters, but E♭ is a semitone lower than E.",
+    "why": "C–E♭ is a minor third."
+  },
+  {
+    "id": "transposition",
+    "title": "Move a melody",
+    "level": "Grade 5 pathway",
+    "goal": "Transpose without losing intervals",
+    "teach": "Transposing moves every note by the same musical interval. Preserve the letter-name distance and the correct accidental; do not merely count white piano keys.",
+    "steps": [
+      "Move C up a major second to D.",
+      "Move E up a major second to F♯.",
+      "Check the new key signature and any accidentals."
+    ],
+    "example": "C–E transposed up a major second becomes D–F♯.",
+    "question": "What is E transposed up a major second?",
+    "choices": [
+      "F",
+      "F♯",
+      "G"
+    ],
+    "answer": 1,
+    "hint": "A major second is two semitones.",
+    "why": "E to F♯ is two semitones and spans two letter names."
+  },
+  {
+    "id": "chords",
+    "title": "Build a triad",
+    "level": "Grade 5 pathway",
+    "goal": "Understand tonic triads",
+    "teach": "A triad is made from three notes stacked in thirds. In a major key, the tonic triad uses scale degrees 1, 3 and 5. Its root names the chord.",
+    "steps": [
+      "Write C major: C D E F G A B.",
+      "Choose scale notes 1, 3 and 5.",
+      "You get C–E–G, the tonic triad."
+    ],
+    "example": "The tonic triad of G major is G–B–D.",
+    "question": "Which is the tonic triad in G major?",
+    "choices": [
+      "G B D",
+      "G A D",
+      "G C E"
+    ],
+    "answer": 0,
+    "hint": "Choose the first, third and fifth notes of G major.",
+    "why": "G–B–D is the tonic triad."
+  },
+  {
+    "id": "cadences",
+    "title": "Hear a musical ending",
+    "level": "Grade 5 pathway",
+    "goal": "Recognise basic cadences",
+    "teach": "A cadence is a pair of chords that creates a musical punctuation mark. Perfect cadences move V–I and sound final. Plagal cadences move IV–I. Imperfect cadences end on V.",
+    "steps": [
+      "In C major, chord V is G major.",
+      "Chord I is C major.",
+      "V–I is a perfect cadence."
+    ],
+    "example": "G major followed by C major is a perfect cadence in C major.",
+    "question": "Which chord movement is a perfect cadence?",
+    "choices": [
+      "IV–I",
+      "V–I",
+      "I–V"
+    ],
+    "answer": 1,
+    "hint": "The dominant resolves to the tonic.",
+    "why": "V–I is a perfect cadence."
+  },
+  {
+    "id": "terms",
+    "title": "Read the composer's instructions",
+    "level": "Grade 5 pathway",
+    "goal": "Understand Italian musical terms",
+    "teach": "Composers use terms to describe tempo, mood and expression. Con moto means 'with movement'; dolce means 'sweetly'; ritardando means gradually slowing down.",
+    "steps": [
+      "Read the word aloud.",
+      "Link it to an English relative: moto → motion.",
+      "Imagine how you would play the music."
+    ],
+    "example": "Allegro con moto suggests lively music with movement.",
+    "question": "What does con moto mean?",
+    "choices": [
+      "With movement",
+      "Very slowly",
+      "Without expression"
+    ],
+    "answer": 0,
+    "hint": "Think of the word motion.",
+    "why": "Con moto means with movement."
+  },
+  {
+    "id": "instruments",
+    "title": "Meet the orchestra",
+    "level": "Grade 5 pathway",
+    "goal": "Recognise instrumental families",
+    "teach": "Orchestral instruments are grouped into strings, woodwind, brass and percussion. Bassoon, oboe, clarinet and flute are woodwind instruments; the flute is usually played without a reed.",
+    "steps": [
+      "Listen for how sound begins.",
+      "Bassoon uses a double reed.",
+      "Trumpet uses buzzing lips in a brass mouthpiece."
+    ],
+    "example": "Bassoon and oboe both use double reeds.",
+    "question": "Which instrument uses a double reed?",
+    "choices": [
+      "Trumpet",
+      "Bassoon",
+      "Flute"
+    ],
+    "answer": 1,
+    "hint": "It is a low-pitched woodwind instrument.",
+    "why": "The bassoon uses a double reed."
+  }
+]
