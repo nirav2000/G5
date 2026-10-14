@@ -1,0 +1,8 @@
+{
+  "name": "G5 Music Theory Studio",
+  "short_name": "G5 Theory",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#11192b",
+  "theme_color": "#11192b"
+}
