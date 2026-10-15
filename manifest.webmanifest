@@ -1,8 +1,9 @@
 {
   "name": "G5 Music Theory Studio",
-  "short_name": "G5 Theory",
+  "short_name": "G5",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#11192b",
-  "theme_color": "#11192b"
+  "background_color": "#121a30",
+  "theme_color": "#121a30",
+  "description": "Novice-first Grade 5 music theory learning companion"
 }
