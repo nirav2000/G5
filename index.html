@@ -1,1 +1,151 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#121a30"><title>G5 · Music Theory Studio</title><link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"></head><body><header><div><span class="eyebrow">G5 · Music Theory Studio</span><h1>Learn the language of music.</h1><p>Start from the beginning. See it, hear it, try it — then remember it.</p></div><span class="version">v0.4.0 · Teaching preview</span></header><nav aria-label="App sections"><button data-view="learn" aria-current="page">Learn</button><button data-view="results">Progress</button><button data-view="resources">Resources</button><button data-view="account">Account</button></nav><main><section class="stats" aria-label="Learning progress"><div><strong id="progress">0 / 10</strong><span>Starter lessons</span></div><div><strong id="attempts">0 attempts</strong><span>Learning evidence</span></div><div><strong id="reviews">0 review topics</strong><span>Spaced practice</span></div></section><p id="notice" role="status"></p><section id="learn"><h2>Choose your lesson</h2><div id="topics" class="topics"></div><article class="card"><div class="row"><span id="grade" class="eyebrow"></span><span id="stage" class="eyebrow"></span></div><h2 id="lessonTitle"></h2><p id="intro"></p><div id="notation" class="notation" aria-label="Musical illustration"></div><button id="sound" class="subtle">♫ Hear an example</button><p id="lessonStep" class="lesson-step"></p><button id="continue">Show me the next step →</button><div id="practice" hidden><h3 id="question"></h3><button id="hint" class="subtle">I need a hint</button><p id="hintText"></p><div id="lessonAnswers" class="answers"></div><p id="lessonFeedback" role="status" aria-live="polite"></p><div class="row"><button id="retry" class="subtle">Try again</button><button id="nextLesson">Next lesson →</button></div></div></article><article class="card"><h2>Ready to practise independently?</h2><p>Try an original 75-question practice paper. This is a repeated-item teaching approximation, <strong>not</strong> a validated ABRSM mock or exam-readiness prediction.</p><button id="startMock">Start practice paper</button></article></section><section id="mock" class="card" hidden><span id="mockCount" class="eyebrow"></span><h2 id="mockQuestion"></h2><div id="mockAnswers" class="answers"></div><button id="exitMock" class="subtle">Exit practice paper</button></section><section id="results" class="card" hidden><h2>Progress & practice score sheet</h2><p>Official online Music Theory mark forms show marks by section. This is an <strong>unofficial</strong> practice breakdown, not an ABRSM certificate or examiner form.</p><h3 id="resultHeading">No practice paper completed yet</h3><div id="resultDetails"></div><div class="row"><button id="export">Export progress JSON</button><button id="reset" class="subtle">Reset this device</button></div></section><section id="account" class="card" hidden><h2>Parent account & learning sync</h2><p id="accountState">Guest</p><p id="syncState">Local learning available</p><label for="email">Email</label><input id="email" type="email" autocomplete="email"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password"><div class="row"><button id="login">Sign in</button><button id="register">Create account</button><button id="google">Google sign-in</button><button id="resetPassword">Reset password</button><button id="logout" hidden>Sign out</button><button id="importGuest" hidden>Import guest learning</button></div><p id="accountError" role="alert"></p><p>Parent-managed accounts. Guest learning stays on this device unless you explicitly import it. Cloud sync requires account-scoped Firestore permissions.</p></section><section id="resources" class="card" hidden><h2>Book and official resources</h2><p>Use alongside <em>Take Five and Pass First Time</em> by Christopher Dunn. Page-by-page alignment has not yet been verified.</p><p><a href="https://www.abrsm.org/sites/default/files/2023-09/music-theory-syllabus-outline-grades-1-5-from-2020.pdf" target="_blank" rel="noopener">Official ABRSM Grades 1–5 syllabus ↗</a></p><p><a href="https://www.abrsm.org/sites/default/files/2023-09/abrsm-ot-reference-sheet-example-questions_online-music-theory-from-2020.pdf" target="_blank" rel="noopener">Official Grade 5 online example question sheet ↗</a></p><p><a href="https://www.abrsm.org/en-cy/results-and-certificates" target="_blank" rel="noopener">How to obtain your official digital mark form and certificate ↗</a></p><p>Online Grade 5 is computer-marked, rather than assessed with the same examiner-written form used for practical performances.</p></section></main><footer>G5 v0.4.0 · Independent companion · Account-based learning sync (subject to Firestore permissions) · Not endorsed by ABRSM</footer><script type="module" src="src/app-v2.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f5f0">
+<meta name="description" content="Learn ABRSM Grade 5 music theory step by step: see the notes, hear the sound, practise the idea.">
+<title>G5 · Junior Music Studio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="studio.css">
+</head>
+<body>
+<div class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#learn" aria-label="G5 Junior Music Studio, home">
+      <span class="brand-mark" aria-hidden="true">𝄞</span>
+      <span><strong>G5 Music Studio</strong><small>Take five. Learn for life.</small></span>
+    </a>
+    <div class="header-end"><span class="header-pill">♫ Your own practice room</span><span class="version">v0.5.0</span></div>
+  </div>
+  <nav class="site-nav" aria-label="App sections">
+    <button data-view="learn" aria-current="page"><span class="nav-icon" aria-hidden="true">♬</span> Studio</button>
+    <button data-view="results"><span class="nav-icon" aria-hidden="true">✧</span> Progress</button>
+    <button data-view="resources"><span class="nav-icon" aria-hidden="true">♮</span> Resources</button>
+    <button data-view="account"><span class="nav-icon" aria-hidden="true">♙</span> Account</button>
+  </nav>
+</div>
+
+<main class="shell">
+  <section class="hero" aria-labelledby="welcomeTitle">
+    <div class="hero-copy">
+      <span class="eyebrow">WELCOME TO YOUR MUSIC STUDIO</span>
+      <h1 id="welcomeTitle">Every great musician starts with a single note.</h1>
+      <p>Little lessons, real musical sounds and plenty of chances to try again. Build your way towards Grade 5, one discovery at a time.</p>
+      <div class="hero-actions"><button id="heroContinue" class="primary-cream">Continue practising <span aria-hidden="true">→</span></button><span id="heroNext">Your next musical discovery awaits</span></div>
+    </div>
+    <div class="hero-medallion" aria-hidden="true"><span class="big-note">♪</span><strong id="heroCount">0 / 10</strong><small>lessons tried</small></div>
+  </section>
+
+  <section class="stats" aria-label="Your learning progress">
+    <div><div class="stat-top"><strong id="progress">0 / 10</strong><span class="stat-glyph" aria-hidden="true">♫</span></div><span>Lessons practised</span></div>
+    <div><div class="stat-top"><strong id="attempts">0</strong><span class="stat-glyph" aria-hidden="true">✦</span></div><span>Questions answered</span></div>
+    <div><div class="stat-top"><strong id="reviews">0</strong><span class="stat-glyph" aria-hidden="true">↺</span></div><span>Topics ready to revisit</span></div>
+    <div><div class="stat-top"><strong id="streak">0 days</strong><span class="stat-glyph" aria-hidden="true">☀</span></div><span>Recent practice streak</span></div>
+  </section>
+  <p id="notice" role="status" aria-live="polite"></p>
+
+  <section id="learn" aria-label="Music studio">
+    <div class="studio-layout">
+      <aside class="studio-sidebar" aria-labelledby="topicHeading">
+        <div class="sidebar-top"><h2 class="section-title" id="topicHeading">Your repertoire</h2><span class="sub-count">10 lessons</span></div>
+        <p class="section-description">Pick a topic and discover something new.</p>
+        <div id="topics" class="topics" aria-label="Choose a lesson"></div>
+        <div class="sidebar-card">
+          <span class="section-label">Your daily encore</span>
+          <h3>Five little questions</h3>
+          <p id="dailySummary">A few minutes of focused practice can make a difference.</p>
+          <div class="score-track" role="progressbar" aria-label="Today's practice goal" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="dailyTrack"><div id="dailyFill" class="score-fill"></div></div>
+          <button id="reviewNow" class="outline">Revisit a topic <span aria-hidden="true">↗</span></button>
+        </div>
+      </aside>
+
+      <div class="studio-main">
+        <article class="card lesson-card" id="lessonWorkspace" aria-labelledby="lessonTitle">
+          <div class="lesson-head">
+            <div><span class="section-label" id="grade">Foundation Grade 1</span><h2 id="lessonTitle" class="lesson-heading">Your next lesson</h2></div>
+            <span class="lesson-ordinal" id="lessonSymbol" aria-hidden="true">♪</span>
+          </div>
+          <p id="intro"></p>
+          <div class="learning-steps" id="lessonSteps" aria-label="Lesson progress" role="group"><span></span><span></span><span></span><span></span></div>
+          <div class="play-label"><strong>See the music</strong><button id="sound" class="subtle">♫ Hear an example</button></div>
+          <div id="notation" class="notation" aria-label="Musical illustration"></div>
+          <div class="lesson-body">
+            <span id="stage" class="eyebrow">First, let's explore</span>
+            <p id="lessonStep" class="lesson-step"></p>
+            <button id="continue">Show me the next step <span aria-hidden="true">→</span></button>
+            <div id="practice" hidden>
+              <h3 id="question"></h3>
+              <button id="hint" class="subtle">✦ A little hint, please</button>
+              <p id="hintText"></p>
+              <div id="lessonAnswers" class="answers" aria-label="Choose your answer"></div>
+              <p id="lessonFeedback" role="status" aria-live="polite"></p>
+              <div class="row next-actions">
+                <button id="retry" class="subtle">Try this one again</button>
+                <button id="nextLesson">Next lesson <span aria-hidden="true">→</span></button>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="card exam-spotlight">
+          <span class="exam-icon" aria-hidden="true">𝄢</span>
+          <div>
+            <span class="section-label">When you're ready</span>
+            <h3>The practice performance</h3>
+            <p>Try a 75-question teaching paper in a calm, distraction-free space. Questions repeat, so this is <strong>not</strong> a validated ABRSM mock or a prediction of exam results.</p>
+            <button id="startMock">Enter practice mode <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="mock" hidden aria-labelledby="mockQuestion">
+    <div class="mock-top"><span class="section-label">QUIET PRACTICE MODE</span><span id="mockCount" class="eyebrow">Question 1 of 75</span></div>
+    <div class="mock-track" role="presentation"><div id="mockProgress"></div></div>
+    <h2 id="mockQuestion" class="mock-heading"></h2>
+    <div id="mockAnswers" class="answers"></div>
+    <button id="exitMock" class="subtle">Exit practice mode</button>
+  </section>
+
+  <section id="results" hidden aria-labelledby="progressTitle">
+    <span class="section-label">Your practice journal</span>
+    <h2 id="progressTitle">Look how far you've come.</h2>
+    <p id="progressNarrative">Every attempt teaches you something, including the ones where you ask for help.</p>
+    <h3 id="resultHeading">No practice paper completed yet</h3>
+    <div id="resultDetails"></div>
+    <p>Your practice score is <strong>unofficial</strong>. Official ABRSM online Music Theory forms report section marks; this app does not issue certificates.</p>
+    <div class="row"><button id="export">Export practice history</button><button id="reset" class="subtle">Reset this device</button></div>
+  </section>
+
+  <section id="account" hidden aria-labelledby="accountTitle">
+    <span class="section-label">Parent space</span>
+    <h2 id="accountTitle">Your account, your music.</h2>
+    <p id="accountState">Guest</p>
+    <p id="syncState">Learning is stored on this device.</p>
+    <label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="parent@example.com">
+    <label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Eight characters or more">
+    <div class="row">
+      <button id="login">Sign in</button><button id="register">Create account</button>
+      <button id="google" class="subtle">Google sign-in</button><button id="resetPassword" class="subtle">Reset password</button>
+      <button id="logout" hidden>Sign out</button><button id="importGuest" class="subtle" hidden>Import guest learning</button>
+    </div>
+    <p id="accountError" role="alert"></p>
+    <p>Accounts are intended to be parent-managed. Guest practice stays on this device until you explicitly import it. Cloud sync depends on secure account-scoped Firestore permissions.</p>
+  </section>
+
+  <section id="resources" hidden aria-labelledby="resourcesTitle">
+    <span class="section-label">Music library</span>
+    <h2 id="resourcesTitle">Your reference shelf.</h2>
+    <p>Learn alongside Christopher Dunn's <em>Take Five and Pass First Time</em>. Page-by-page alignment with the book has not yet been verified.</p>
+    <p><a href="https://www.abrsm.org/sites/default/files/2023-09/music-theory-syllabus-outline-grades-1-5-from-2020.pdf" target="_blank" rel="noopener">ABRSM Grades 1–5 syllabus ↗</a></p>
+    <p><a href="https://www.abrsm.org/sites/default/files/2023-09/abrsm-ot-reference-sheet-example-questions_online-music-theory-from-2020.pdf" target="_blank" rel="noopener">Official online Music Theory example questions ↗</a></p>
+    <p><a href="https://www.abrsm.org/en-cy/results-and-certificates" target="_blank" rel="noopener">Official results, mark forms and certificates ↗</a></p>
+    <p>Grades 1–5 online Music Theory is computer-marked. These lessons are original teaching material, not official exam questions.</p>
+  </section>
+</main>
+<footer>G5 v0.5.0 · An independent music-learning companion · Not endorsed by ABRSM · Learning preview</footer>
+<script type="module" src="src/app-v2.js"></script>
+</body>
+</html>
