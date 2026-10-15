@@ -1,18 +1,13 @@
-# Shared capability installation ledger · 2026-10-15
+# Shared library installation ledger · 2026-10-15
 
-| Capability | State | Notes |
-|---|---|---|
-| Apps Platform v1.7 | Available | Contract inspected; not wired into UI |
-| Auth v1 | Available | Shadow mode supported; Firebase identity not configured |
-| Account / Privacy | Available | Integration requires account UX and testing |
-| Learning SDK | Available | Separate local G5 event ledger is implemented; SDK not installed |
-| Learning Sync v1 | Available | Auth and Firestore same-project and security gates unresolved |
-| PWA | Available | Manifest added; service worker not installed |
-| Notes | Available | Not installed |
-| Monitor / Firebase Usage | Available | Not installed; child privacy review required |
-| Notifications | Available | Not installed; unnecessary for initial child experience |
-| Version Lab | Available | Not installed; must remain developer-only |
+G5 loads the Apps Platform v1.7.0 loader at runtime and **attempts to install** Auth (shadow), Learning SDK, Learning Sync (guest local), Notes (local, UI disabled), and PWA (G5-specific service worker). Each capability is isolated so a failed remote module does not break lessons. The in-app status displays loaded and failed capabilities; no runtime deployment smoke test has yet verified each module.
 
-Shared source reference: Apps main 4ab46af3d052c41d82c29c7088b0b1215b244531. CI fetches an immutable snapshot for contract review only, not runtime installation.
+- Auth: shadow mode only. No sign-in interface or Firebase credentials wired.
+- Learning: guest learning store initialized; the existing G5 event history has not been migrated into the SDK.
+- Learning Sync: local guest sync instance created; capture and cloud transport not yet connected.
+- Notes: shared Notes initialized with local storage; no notes interface.
+- PWA: shared registration attempted using /G5/sw.js, scope /G5/.
+- Account, Privacy, Monitor, Firebase Usage, Version Lab: not installed. Must be separately tested, especially child data and account isolation.
+- Firebase: kk-syllabus approved as target, but no verified Firebase config, transport, or Firestore rules. No cloud writes.
 
-Firebase project kk-syllabus is authorised, **not connected**. Before enabling remote writes: obtain correct Firebase web config, verify permitted sign-in domain/provider, merge least-privilege rules without replacing existing rules, run emulator tests, test offline sync, and add explicit guest import and remote deletion flow. Do not deploy permissive rules.
+Never describe runtime initialization as a verified deployment. See BUILD_PLAN.md for release gates.
