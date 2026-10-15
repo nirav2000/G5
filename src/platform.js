@@ -1,0 +1,2 @@
+// Non-blocking shared Auth bootstrap. Never write private child data to the cloud without verified Firebase configuration and rules.
+export async function initPlatform(onStatus=()=>{}){try{const {Auth}=await import("https://nirav2000.github.io/Apps/auth/v1/index.js");await Auth.init({appId:"g5",mode:"shadow"});onStatus("Shared account capability ready (local learning mode).");return Auth}catch(e){onStatus("Offline learning mode — account service unavailable.");return null}}
