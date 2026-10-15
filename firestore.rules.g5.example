@@ -1,0 +1,8 @@
+// MERGE into existing kk-syllabus rules; do NOT deploy this file as the project's complete ruleset.
+// This is a proposed restricted path, pending verification against actual Learning Sync paths.
+// match /learningSyncApps/g5/users/{uid}/learners/{learnerId}/chunks/{chunkId} {
+//   allow read, write: if request.auth != null && request.auth.uid == uid
+//     && request.resource.data.keys().hasOnly(['schema','events','updatedAt'])
+//     && request.resource.data.schema == 2;
+// }
+// Deletions and migration require separate review. A rules emulator test is required.
